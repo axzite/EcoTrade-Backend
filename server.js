@@ -7,7 +7,8 @@ import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
 import { config } from "dotenv";
 import broadcastRoutes from "./routes/broadcastRoute.js";
-
+import adminAnalyticsRouter from "./routes/adminAnalytics.js";
+import productInsightsRouter from "./routes/productInsights.js";
 
 
 import "dotenv/config";
@@ -45,6 +46,8 @@ app.use("/images", express.static("uploads"));
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 app.use("/api/broadcast", broadcastRoutes);
+app.use("/api/admin", adminAnalyticsRouter);
+app.use("/api/admin/product-insights", productInsightsRouter);
 
 
 // Root test
